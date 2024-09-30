@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion</title>
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="Accordion.css">
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
 
+      <div class="login text-primary col-4 col-sm-6">ورود</div>
+      <form class="form col-4 col-sm-6" action="#">
+        <input class="phone-number" type="text " placeholder="شماره موبایل">
+        <div class="show-phonevalid"></div>
+        <input class="password" type="password" placeholder="کلمه عبور">
+        <div class="show-passvalid"></div>
+        <button class="login-btn text-bg-primary">ورود</button>
+      </form>
 
-</head>
-<body>
-    <div class="container  mt-5">
-        <div class="login text-primary col-4 col-sm-6 ">ورود</div>
-        <form class="form col-4 col-sm-6" action="#">
-            <input type="text" placeholder="شماره موبایل">
-            <input type="password" placeholder="کلمه عبور">
-            <button class="login-btn text-bg-primary">ورود</button>
-        </form>
-        <div class="login text-primary col-4 col-sm-6 mt-5">ثبت نام</div>
-        <form class="form col-4 col-sm-6" action="#">
-            <input type="text" placeholder="نام">
-            <input type="text" placeholder="نام خانوادگی ">
-            <input type="text" placeholder="شماره موبایل">
-            <input type="password" placeholder="کلمه عبور">
-            <button class="login-btn text-bg-primary">ثبت نام</button>
-        </form>
+      <div class="login text-primary col-4 col-sm-6 mt-5">ثبت نام</div>
+      <form class="form col-4 col-sm-6" action="#">
+        <input type="text" placeholder="نام" >
+        <input type="text" placeholder="نام خانوادگی " >
+        <input class="phone-number" type="text" placeholder="شماره موبایل">
+        <div class="show-phonevalid"></div>
+        <input type="password" placeholder="کلمه عبور" >
+        <button class="login-btn text-bg-primary">ثبت نام</button>
+      </form>
     </div>
 
     <script src="accordion.js"></script>
-
-</body>
+  </body>
 </html>

@@ -44,6 +44,9 @@ form input{
     border-radius: 8px;
     padding-right: 8px;
 }
+.show-phonevalid{
+    font-size: 0.8rem;
+}
 form input:hover{
     background-color: rgb(221, 219, 219);
 }
