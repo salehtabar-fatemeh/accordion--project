@@ -39,7 +39,7 @@ div.login-form{
    
 }
 .login-form.active{
-    height: 320px;
+    height: 280px;
 }
 
 
@@ -55,7 +55,7 @@ div.login-form{
     border-radius: 8px;
     padding-right: 8px;
 }
-.show-phonevalid,.passwordInps{
+.show-phonevalid,.passwordInpsو,.show-passvalid{
     font-size: 0.8rem;
 }
 .login-form input:hover{
