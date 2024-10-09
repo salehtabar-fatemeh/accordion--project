@@ -3,7 +3,7 @@ const loginForms = document.querySelectorAll(".login-form");
 const phoneNumberInps = document.querySelectorAll(".phone-number");
 const showPhoneValids = document.querySelectorAll(".show-phonevalid");
 const passwordInps = document.querySelectorAll(".password");
-const showPassValid = document.querySelectorAll(".show-passvalid");
+const showPassValids = document.querySelectorAll(".show-passvalid");
 const inps = document.querySelectorAll("input");
 const btns = document.querySelectorAll(".login-btn");
 
@@ -29,16 +29,43 @@ for (let i = 0; i < phoneNumberInps.length; i++) {
   });
 }
 
-for (let i = 0; i < btns.length; i++) {
+for (let i = 0; i < btns.length; i++) { ///این بخش کد خوب کار نمی کند
   btns[i].addEventListener("click", () => {
-    if (inps[i].value.trim() === " ") {
+    if (inps[i].value.trim() == "") {
       inps[i].nextElementSibling.innerHTML = "وارد کردن این بخش الزامی است";
       inps[i].nextElementSibling.style.color = "red";
-      inps[i].nextElementSibling.style.caretColor = "red";
+      inps[i].style.caretColor = "red";
+      inps[i].nextElementSibling.style.fontSize = "12.5px";
     } else {
-      inps[i].nextElementSibling.innerHTML = " ";
-      inps[i].nextElementSibling.style.caretColor = "blue";
+      inps[i].style.caretColor = "blue";
     }
   });
 }
+
+
+passwordInps.forEach((passwordInp, i) => {
+  passwordInp.addEventListener("keyup", () => {
+    const password = passwordInp.value;
+
+    if (password.length < 8) {
+      showPassValids[i].innerHTML = "رمز عبور باید حداقل 8 کاراکتر باشد";
+      showPassValids[i].style.color = "red";
+      passwordInp.style.caretColor = "red";
+    } else {
+      const hasLowerCase = /[a-z]/.test(password);
+      const hasUpperCase = /[A-Z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      const hasSpecialChar = /[@!#\.\-_%\$\+\*\^]/.test(password);
+      if (hasLowerCase && hasUpperCase && hasNumber && hasSpecialChar) {
+        showPassValids[i].innerHTML = "رمز عبور معتبر است";
+        showPassValids[i].style.color = "green";
+        passwordInp.style.caretColor = "blue";
+      } else {
+        showPassValids[i].innerHTML = "رمز عبور باید شامل حرف کوچک، حرف بزرگ، عدد و یک کاراکتر خاص باشد";
+        showPassValids[i].style.color = "red";
+        passwordInp.style.caretColor = "red";
+      }
+    }
+  });
+});
 
